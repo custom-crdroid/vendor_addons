@@ -171,7 +171,8 @@ PRODUCT_PACKAGES += \
     FontSonySketchOverlay \
     FontStoropiaOverlay \
     FontSurferOverlay \
-    FontUbuntuOverlay
+    FontUbuntuOverlay \
+    FontVolteOverlay
 
 # Icon Packs
 PRODUCT_PACKAGES += \
