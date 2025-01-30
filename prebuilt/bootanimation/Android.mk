@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+BOOTFPS := 30
 
 TARGET_GENERATED_BOOTANIMATION := $(TARGET_OUT_INTERMEDIATES)/BOOTANIMATION/bootanimation.zip
 $(TARGET_GENERATED_BOOTANIMATION): INTERMEDIATES := $(TARGET_OUT_INTERMEDIATES)/BOOTANIMATION/intermediates
@@ -30,15 +31,12 @@ $(TARGET_GENERATED_BOOTANIMATION): $(SOONG_ZIP)
 	IMAGESCALEHEIGHT=$$(expr $$IMAGESCALEWIDTH \* 16 \/ 9); \
 	RESOLUTION="$$IMAGESCALEWIDTH"x"$$IMAGESCALEHEIGHT"; \
 	if [ "$$IMAGESCALEWIDTH" -eq 1440 ]; then \
-		BOOTFPS=60; \
 	    tar xfp vendor/addons/prebuilt/bootanimation/bootanimation_1440.tar -C $(INTERMEDIATES); \
             echo "1440 1440 $(BOOTFPS)" > $(INTERMEDIATES)/desc.txt; \
 	elif [ "$$IMAGESCALEWIDTH" -eq 1080 ]; then \
-		BOOTFPS=30; \
 	    tar xfp vendor/addons/prebuilt/bootanimation/bootanimation_1080.tar -C $(INTERMEDIATES); \
             echo "1080 1080 $(BOOTFPS)" > $(INTERMEDIATES)/desc.txt; \
 	else \
-		BOOTFPS=30; \
 	    tar xfp vendor/addons/prebuilt/bootanimation/bootanimation_1080.tar -C $(INTERMEDIATES); \
             echo "1080 1080 $(BOOTFPS)" > $(INTERMEDIATES)/desc.txt; \
 	fi; \
