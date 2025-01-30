@@ -370,7 +370,8 @@ PRODUCT_PACKAGES += \
 
 # Basic Call Recorder
 PRODUCT_PACKAGES += \
-    Bcr
+    Bcr \
+    WallpaperPickerGoogleRelease
 
 # Include {Lato,Rubik} fonts
 $(call inherit-product-if-exists, external/google-fonts/lato/fonts.mk)
